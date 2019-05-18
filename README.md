@@ -55,7 +55,7 @@ echo "snake_case: " . $case4->convert() . PHP_EOL;
 echo "TRAIN-CASE: " . $case5->convert() . PHP_EOL;
 echo "UpperCamel: " . $case6->convert() . PHP_EOL;
 ```
-#####Output
+##### Output
 ```bash
 kebab-case: dfgkldsfl-jdj-ασδφασδω-123-aaaaa-bbbbbbbb-saaaa-sadf-asdfkj-asdf-asda-bcde-hello1world-asdfasf-1
 TRAIN-CASE: DFGKLDSFL-JDJ-ΑΣΔΦΑΣΔΩ-123-AAAAA-BBBBBBBB-SAAAA-SADF-ASDFKJ-ASDF-ASDA-BCDE-HELLO1WORLD-ASDFASF-1
