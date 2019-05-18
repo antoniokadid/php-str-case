@@ -1,0 +1,21 @@
+{
+    "name": "antoniokadid/php-str-case",
+    "description": "A library to work with string case styles",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Antonio Kadid",
+            "email": "antoniokadid@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "ext-mbstring": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "AntonioKadid\\StringCase\\": "src/"
+        }
+    }
+}
