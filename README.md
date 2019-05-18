@@ -47,10 +47,10 @@ $case5 = new LowerCamel($input);
 $case6 = new UpperCamel($input);
 
 echo "kebab-case: " . $case1->convert() . PHP_EOL;
-echo "lowerCamelCase: " . $case2->convert() . PHP_EOL;
-echo "SCREAMING_SNAKE_CASE: " . $case3->convert() . PHP_EOL;
-echo "snake_case: " . $case4->convert() . PHP_EOL;
-echo "TRAIN-CASE: " . $case5->convert() . PHP_EOL;
+echo "TRAIN-CASE: " . $case2->convert() . PHP_EOL;
+echo "snake_case: " . $case3->convert() . PHP_EOL;
+echo "SCREAMING_SNAKE_CASE: " . $case4->convert() . PHP_EOL;
+echo "lowerCamelCase: " . $case5->convert() . PHP_EOL;
 echo "UpperCamel: " . $case6->convert() . PHP_EOL;
 ```
 ##### Output
