@@ -33,12 +33,10 @@ use \AntonioKadid\StringCase\Styles\LowerCamel;
 use \AntonioKadid\StringCase\Styles\UpperCamel;
 
 $input = <<<EOT
-dfgkldsfl
-jdj ασδφασδω 123 AAAAA BBBbbbBB
-saaaa sadf  asdfkj asdf
-asda
-bcde
-Hello1world Asdfasf 1
+Hello world
+numbers 1 to 10 and 
+some unicode chars
+Γειά αυτό είναι παράδειγμα
 EOT;
 
 $case1 = new Kebab($input);
@@ -57,12 +55,12 @@ echo "UpperCamel: " . $case6->convert() . PHP_EOL;
 ```
 ##### Output
 ```bash
-kebab-case: dfgkldsfl-jdj-ασδφασδω-123-aaaaa-bbbbbbbb-saaaa-sadf-asdfkj-asdf-asda-bcde-hello1world-asdfasf-1
-TRAIN-CASE: DFGKLDSFL-JDJ-ΑΣΔΦΑΣΔΩ-123-AAAAA-BBBBBBBB-SAAAA-SADF-ASDFKJ-ASDF-ASDA-BCDE-HELLO1WORLD-ASDFASF-1
-snake_case: dfgkldsfl_jdj_ασδφασδω_123_aaaaa_bbbbbbbb_saaaa_sadf_asdfkj_asdf_asda_bcde_hello1world_asdfasf_1
-SCREAMING_SNAKE_CASE: DFGKLDSFL_JDJ_ΑΣΔΦΑΣΔΩ_123_AAAAA_BBBBBBBB_SAAAA_SADF_ASDFKJ_ASDF_ASDA_BCDE_HELLO1WORLD_ASDFASF_1
-lowerCamelCase: dfgkldsflJdjΑσδφασδω123AaaaaBbbbbbbbSaaaaSadfAsdfkjAsdfAsdaBcdeHello1worldAsdfasf1
-UpperCamel: DfgkldsflJdjΑσδφασδω123AaaaaBbbbbbbbSaaaaSadfAsdfkjAsdfAsdaBcdeHello1worldAsdfasf1
+kebab-case: hello-world-numbers-1-to-10-and-some-unicode-chars-γειά-αυτό-είναι-παράδειγμα
+lowerCamelCase: HELLO-WORLD-NUMBERS-1-TO-10-AND-SOME-UNICODE-CHARS-ΓΕΙΆ-ΑΥΤΌ-ΕΊΝΑΙ-ΠΑΡΆΔΕΙΓΜΑ
+SCREAMING_SNAKE_CASE: hello_world_numbers_1_to_10_and_some_unicode_chars_γειά_αυτό_είναι_παράδειγμα
+snake_case: HELLO_WORLD_NUMBERS_1_TO_10_AND_SOME_UNICODE_CHARS_ΓΕΙΆ_ΑΥΤΌ_ΕΊΝΑΙ_ΠΑΡΆΔΕΙΓΜΑ
+TRAIN-CASE: helloWorldNumbers1To10AndSomeUnicodeCharsΓειάΑυτόΕίναιΠαράδειγμα
+UpperCamel: HelloWorldNumbers1To10AndSomeUnicodeCharsΓειάΑυτόΕίναιΠαράδειγμα
 ```
 
 ## LICENSE
