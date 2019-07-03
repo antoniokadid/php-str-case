@@ -25,12 +25,7 @@ composer require antoniokadid/php-str-case
 ## Examples
 
 ```php
-use \AntonioKadid\StringCase\Styles\Kebab;
-use \AntonioKadid\StringCase\Styles\Train;
-use \AntonioKadid\StringCase\Styles\Snake;
-use \AntonioKadid\StringCase\Styles\ScreamingSnake;
-use \AntonioKadid\StringCase\Styles\LowerCamel;
-use \AntonioKadid\StringCase\Styles\UpperCamel;
+use AntonioKadid\StringCase\StringCase;
 
 $input = <<<EOT
 Hello world
@@ -39,19 +34,23 @@ some unicode chars
 Γειά αυτό είναι παράδειγμα
 EOT;
 
-$case1 = new Kebab($input);
-$case2 = new Train($input);
-$case3 = new Snake($input);
-$case4 = new ScreamingSnake($input);
-$case5 = new LowerCamel($input);
-$case6 = new UpperCamel($input);
+$kebab = StringCase::toKebab($input);
+echo "kebab-case: " . $kebab . PHP_EOL;
 
-echo "kebab-case: " . $case1->convert() . PHP_EOL;
-echo "TRAIN-CASE: " . $case2->convert() . PHP_EOL;
-echo "snake_case: " . $case3->convert() . PHP_EOL;
-echo "SCREAMING_SNAKE_CASE: " . $case4->convert() . PHP_EOL;
-echo "lowerCamelCase: " . $case5->convert() . PHP_EOL;
-echo "UpperCamel: " . $case6->convert() . PHP_EOL;
+$train = StringCase::toTrain($input);
+echo "TRAIN-CASE: " . $train . PHP_EOL;
+
+$snake = StringCase::toSnake($input);
+echo "snake_case: " . $snake . PHP_EOL;
+
+$screamingSnake = StringCase::toScreamingSnake($input);
+echo "SCREAMING_SNAKE_CASE: " . $screamingSnake . PHP_EOL;
+
+$lowerCamel = StringCase::toLowerCamel($input);
+echo "lowerCamelCase: " . $lowerCamel . PHP_EOL;
+
+$upperCamel = StringCase::toUpperCamel($input);
+echo "UpperCamel: " . $upperCamel . PHP_EOL;
 ```
 ##### Output
 ```bash
