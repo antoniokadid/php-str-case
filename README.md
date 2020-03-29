@@ -1,31 +1,36 @@
-# php-str-case
-A library to work with string case styles.
+# WAPPKit Core - Text
+A PHP library to work with text.
 
-Supported case styles:
+Part of Web Application Kit (WAPPKit) Core which powers WAPPKit, a privately owned CMS.
 
-- Kebab (kebab-case)
-- Train (TRAIN-CASE)
-- Snake (snake_case)
-- Screaming snake (SCREAMING_SNAKE_CASE)
-- Lower camel (lowerCamelCase)
-- Upper camel (UpperCamelCase)
+*Project under development and may be subject to a lot of changes. Use at your own risk.*
 
-*Project under development.*
+## Features
+- Provides interface for text encoding/decoding.
+- Provides JSON encoding/decoding.
+- Providers functionality for changing text case:
+  - Kebab (kebab-case)
+  - Train (TRAIN-CASE)
+  - Snake (snake_case)
+  - Screaming snake (SCREAMING_SNAKE_CASE)
+  - Lower camel (lowerCamelCase)
+  - Upper camel (UpperCamelCase)
 
 ## Installation
 
 ```bash
-composer require antoniokadid/php-str-case
+composer require antoniokadid/wappkit-core-text
 ```
 
 ## Requirements
 * PHP 7.1
 * ext-mbstring
+* ext-json
 
 ## Examples
 
 ```php
-use AntonioKadid\StringCase\StringCase;
+use AntonioKadid\WAPPKitCore\Text\TextCase;
 
 $input = <<<EOT
 Hello world
@@ -34,22 +39,22 @@ some unicode chars
 Γειά αυτό είναι παράδειγμα
 EOT;
 
-$kebab = StringCase::toKebab($input);
+$kebab = TextCase::toKebab($input);
 echo "kebab-case: " . $kebab . PHP_EOL;
 
-$train = StringCase::toTrain($input);
+$train = TextCase::toTrain($input);
 echo "TRAIN-CASE: " . $train . PHP_EOL;
 
-$snake = StringCase::toSnake($input);
+$snake = TextCase::toSnake($input);
 echo "snake_case: " . $snake . PHP_EOL;
 
-$screamingSnake = StringCase::toScreamingSnake($input);
+$screamingSnake = TextCase::toScreamingSnake($input);
 echo "SCREAMING_SNAKE_CASE: " . $screamingSnake . PHP_EOL;
 
-$lowerCamel = StringCase::toLowerCamel($input);
+$lowerCamel = TextCase::toLowerCamel($input);
 echo "lowerCamelCase: " . $lowerCamel . PHP_EOL;
 
-$upperCamel = StringCase::toUpperCamel($input);
+$upperCamel = TextCase::toUpperCamel($input);
 echo "UpperCamel: " . $upperCamel . PHP_EOL;
 ```
 ##### Output
@@ -64,4 +69,4 @@ UpperCamel: HelloWorldNumbers1To10AndSomeUnicodeCharsΓειάΑυτόΕίναι�
 
 ## LICENSE
 
-php-str-case is released under MIT license.
+MIT license.

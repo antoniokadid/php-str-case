@@ -1,13 +1,13 @@
 <?php
 
-namespace AntonioKadid\StringCase;
+namespace AntonioKadid\WAPPKitCore\Text;
 
 /**
- * Class StringCase
+ * Class TextCase
  *
- * @package AntonioKadid\StringCase
+ * @package AntonioKadid\WAPPKitCore\Text
  */
-abstract class StringCase
+abstract class TextCase
 {
     public const UNKNOWN_CASE = 0;
     public const KEBAB_CASE = 1;
@@ -117,11 +117,11 @@ abstract class StringCase
         // check for Train and Kebab
         if (@preg_match("/^([[:upper:]]|[[:digit:]]|\\-)+$/u", $input) ||
             @preg_match("/^([[:lower:]]|[[:digit:]]|\\-)+$/u", $input)) {
-            $result = preg_split("/\\-/u", $input, -1, PREG_SPLIT_NO_EMPTY);;
+            $result = preg_split("/\\-/u", $input, -1, PREG_SPLIT_NO_EMPTY);
         } // check for Screaming snake and Snake
         else if (@preg_match("/^([[:upper:]]|[[:digit:]]|\\_)+$/u", $input) ||
             @preg_match("/^([[:lower:]]|[[:digit:]]|\\_)+$/u", $input)) {
-            $result = preg_split("/\\_/u", $input, -1, PREG_SPLIT_NO_EMPTY);;
+            $result = preg_split("/\\_/u", $input, -1, PREG_SPLIT_NO_EMPTY);
         } // check for Upper Camel and Lower Camel
         else if (!@preg_match("/^[[:upper:]][[:alnum:]]{0,}/u", $input) ||
             !@preg_match("/^[[:lower:]][[:alnum:]]{0,}/u", $input)) {
@@ -138,7 +138,7 @@ abstract class StringCase
 
     /**
      * @param string $input
-     * @param int $targetStringCase
+     * @param int    $targetStringCase
      *
      * @return string
      */
@@ -150,61 +150,61 @@ abstract class StringCase
 
         switch ($targetStringCase) {
             case self::KEBAB_CASE:
-                {
-                    array_walk($preProcessed, function (string &$value) {
-                        $value = mb_strtolower($value, 'UTF-8');
-                    });
+            {
+                array_walk($preProcessed, function (string &$value) {
+                    $value = mb_strtolower($value, 'UTF-8');
+                });
 
-                    return implode('-', $preProcessed);
-                }
+                return implode('-', $preProcessed);
+            }
             case self::LOWER_CAMEL_CASE:
-                {
-                    array_walk($preProcessed, function (string &$value) {
-                        $tmpValue = mb_strtolower($value, 'UTF-8');
-                        $value = mb_strtoupper(mb_substr($tmpValue, 0, 1, 'UTF-8'), 'UTF-8') . mb_substr($tmpValue, 1, NULL, 'UTF-8');
-                    });
+            {
+                array_walk($preProcessed, function (string &$value) {
+                    $tmpValue = mb_strtolower($value, 'UTF-8');
+                    $value = mb_strtoupper(mb_substr($tmpValue, 0, 1, 'UTF-8'), 'UTF-8') . mb_substr($tmpValue, 1, NULL, 'UTF-8');
+                });
 
-                    $result = implode('', $preProcessed);
+                $result = implode('', $preProcessed);
 
-                    return mb_strtolower(mb_substr($result, 0, 1, 'UTF-8'), 'UTF-8') . mb_substr($result, 1, NULL, 'UTF-8');
-                }
+                return mb_strtolower(mb_substr($result, 0, 1, 'UTF-8'), 'UTF-8') . mb_substr($result, 1, NULL, 'UTF-8');
+            }
             case self::SCREAMING_SNAKE_CASE:
-                {
-                    array_walk($preProcessed, function (string &$value) {
-                        $value = mb_strtoupper($value, 'UTF-8');
-                    });
+            {
+                array_walk($preProcessed, function (string &$value) {
+                    $value = mb_strtoupper($value, 'UTF-8');
+                });
 
-                    return implode('_', $preProcessed);
-                }
+                return implode('_', $preProcessed);
+            }
             case self::SNAKE_CASE:
-                {
-                    array_walk($preProcessed, function (string &$value) {
-                        $value = mb_strtolower($value, 'UTF-8');
-                    });
+            {
+                array_walk($preProcessed, function (string &$value) {
+                    $value = mb_strtolower($value, 'UTF-8');
+                });
 
-                    return implode('_', $preProcessed);
-                }
+                return implode('_', $preProcessed);
+            }
             case self::TRAIN_CASE:
-                {
-                    array_walk($preProcessed, function (string &$value) {
-                        $value = mb_strtoupper($value, 'UTF-8');
-                    });
+            {
+                array_walk($preProcessed, function (string &$value) {
+                    $value = mb_strtoupper($value, 'UTF-8');
+                });
 
-                    return implode('-', $preProcessed);
-                }
+                return implode('-', $preProcessed);
+            }
             case self::UPPER_CAMEL_CASE:
-                {
-                    array_walk($preProcessed, function (string &$value) {
-                        $tmpValue = mb_strtolower($value, 'UTF-8');
-                        $value = mb_strtoupper(mb_substr($tmpValue, 0, 1, 'UTF-8'), 'UTF-8') . mb_substr($tmpValue, 1, NULL, 'UTF-8');
-                    });
+            {
+                array_walk($preProcessed, function (string &$value) {
+                    $tmpValue = mb_strtolower($value, 'UTF-8');
+                    $value = mb_strtoupper(mb_substr($tmpValue, 0, 1, 'UTF-8'), 'UTF-8') . mb_substr($tmpValue, 1, NULL, 'UTF-8');
+                });
 
-                    return implode('', $preProcessed);
-                }
+                return implode('', $preProcessed);
+            }
             default:
-                {
-                    return $input;
-                }
+            {
+                return $input;
+            }
         }
     }
 }
