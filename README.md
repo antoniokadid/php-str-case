@@ -19,7 +19,7 @@ Part of Web Application Kit (WAPPKit) Core which powers WAPPKit, a privately own
 ## Installation
 
 ```bash
-composer require antoniokadid/wappkit-core-text
+composer require antoniokadid/wappkit-core-text:dev-master
 ```
 
 ## Requirements
